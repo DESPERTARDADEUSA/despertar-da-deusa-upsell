@@ -480,36 +480,40 @@ section.story.s2 .pull{color:#7d1631!important;-webkit-text-fill-color:#7d1631!i
 .hero .up-ap{font-size:.42em;font-weight:600;color:#fff;letter-spacing:.02em;vertical-align:middle;margin-right:4px}
 .hero .up-valor+.up-pay{margin:2px 0 18px}
 
-/* === botões oficiais da Kiwify === */
-.hero .up-cta{display:flex!important;flex-direction:column;align-items:center}
-.hero .up-kiwify,.hero #kiwify-upsell-eUjZomk{display:contents!important}
-.hero .up-hl{order:1}.hero .up-sub{order:2}
-.hero #kiwify-upsell-trigger-eUjZomk{order:3}
-.hero .up-valor{order:4}.hero .up-pay{order:5}.hero .up-scarce{order:6}
-.hero #kiwify-upsell-cancel-trigger-eUjZomk{order:7}
-.hero #kiwify-upsell-trigger-eUjZomk{display:block!important;width:92%!important;max-width:520px;margin:0 auto!important;padding:20px 18px!important;font-size:clamp(15px,4.2vw,19px)!important;line-height:1.35!important;text-transform:uppercase;cursor:pointer;
+
+/* === botão único da Kiwify, que muda de lugar (topo / quadro de valores) === */
+.kw-slot{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+.kw-slot #kiwify-upsell-eUjZomk{display:contents!important}
+#slotOferta{margin:18px 0 0;justify-content:flex-start}
+#slotOferta:empty{min-height:210px}
+#kiwify-upsell-trigger-eUjZomk{display:block!important;width:92%!important;max-width:520px;margin:0 auto!important;padding:20px 16px!important;font-size:clamp(14px,4.1vw,18px)!important;line-height:1.35!important;text-transform:uppercase;cursor:pointer;
  position:relative;overflow:hidden;isolation:isolate;border-radius:999px!important;border:1px solid #f1dfb3!important;
  background:linear-gradient(180deg,#f2e2bb 0%,#dcbd7f 38%,#c49a52 72%,#a77d3c 100%)!important;color:#3b0a14!important;
- font-family:'Plus Jakarta Sans',Montserrat,sans-serif!important;font-weight:800!important;letter-spacing:.06em!important;text-shadow:0 1px 0 rgba(255,245,220,.55);
+ font-family:'Plus Jakarta Sans',Montserrat,sans-serif!important;font-weight:800!important;letter-spacing:.05em!important;text-shadow:0 1px 0 rgba(255,245,220,.55);
  animation:upbreath 2.6s ease-in-out infinite!important}
-.hero #kiwify-upsell-trigger-eUjZomk::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-40%;width:28%;z-index:-1;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,252,240,.75) 50%,rgba(255,255,255,0) 100%);transform:skewX(-20deg);animation:upshine 2.6s ease-in-out infinite}
-.hero #kiwify-upsell-trigger-eUjZomk:hover{transform:translateY(-2px)}
-.hero #kiwify-upsell-trigger-eUjZomk:focus-visible{outline:3px solid #fff;outline-offset:3px}
-.hero #kiwify-upsell-cancel-trigger-eUjZomk{margin:18px 0 0;color:#cdb8b0!important;background:none!important;border:0!important;font-family:'Plus Jakarta Sans',Montserrat,sans-serif;font-size:13px!important;font-weight:500;text-decoration:underline;opacity:.85;cursor:pointer;padding:6px}
-.hero .up-valor{margin-top:16px!important}
-@media (prefers-reduced-motion:reduce){.hero #kiwify-upsell-trigger-eUjZomk,.hero #kiwify-upsell-trigger-eUjZomk::after{animation:none!important}}
-
-/* === seletor de parcelas que a Kiwify coloca no botão === */
-.hero #kiwify-upsell-eUjZomk > *{order:5}
-.hero .up-pay{order:6!important}.hero .up-scarce{order:7!important}
-.hero #kiwify-upsell-trigger-eUjZomk{order:3!important}
-.hero #kiwify-upsell-cancel-trigger-eUjZomk{order:8!important}
-.hero #kiwify-upsell-eUjZomk label,.hero #kiwify-upsell-eUjZomk > div:not([id]) ,.hero #kiwify-upsell-eUjZomk > p{font-family:'Plus Jakarta Sans',Montserrat,sans-serif!important;color:#e9d6b0!important;font-size:13px!important;font-weight:600!important;letter-spacing:.04em;text-align:center;margin:4px 0 6px!important;background:none!important}
-.hero #kiwify-upsell-eUjZomk select{-webkit-appearance:none;appearance:none;display:block;margin:0 auto 6px!important;min-width:220px;max-width:92%;padding:11px 44px 11px 18px!important;border-radius:999px!important;border:1px solid #c99a3e!important;
+#kiwify-upsell-trigger-eUjZomk::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-40%;width:28%;z-index:-1;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,252,240,.75) 50%,rgba(255,255,255,0) 100%);transform:skewX(-20deg);animation:upshine 2.6s ease-in-out infinite}
+#kiwify-upsell-trigger-eUjZomk:hover{transform:translateY(-2px)}
+#kiwify-upsell-trigger-eUjZomk:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#kiwify-upsell-cancel-trigger-eUjZomk{color:#cdb8b0!important;background:none!important;border:0!important;font-family:'Plus Jakarta Sans',Montserrat,sans-serif;font-size:13px!important;font-weight:500;text-decoration:underline;opacity:.85;cursor:pointer;padding:6px}
+/* o que a Kiwify injeta (texto + caixinha de parcelas) */
+#kiwify-upsell-eUjZomk > :not(button):not([id^="kiwify-upsell-cancel"]){font-family:'Plus Jakarta Sans',Montserrat,sans-serif!important;color:#e9d6b0!important;font-size:13px!important;font-weight:600!important;text-align:center;background:none!important}
+#kiwify-upsell-eUjZomk label{color:#e9d6b0!important;font-size:13px!important;font-weight:600!important;display:block;text-align:center;margin:0 0 6px!important}
+#kiwify-upsell-eUjZomk select{-webkit-appearance:none;appearance:none;display:block;margin:0 auto!important;min-width:220px;max-width:100%;padding:11px 44px 11px 18px!important;border-radius:999px!important;border:1px solid #c99a3e!important;
  background:#2a0911 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23dcbd7f' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 18px center!important;
- color:#f2e2bb!important;font-family:'Plus Jakarta Sans',Montserrat,sans-serif!important;font-weight:700!important;font-size:15px!important;text-align:center;text-align-last:center;box-shadow:none!important;outline:none;cursor:pointer}
-.hero #kiwify-upsell-eUjZomk select:focus-visible{box-shadow:0 0 0 3px rgba(220,189,127,.45)!important}
-.hero #kiwify-upsell-eUjZomk select option{background:#2a0911;color:#f2e2bb}
+ color:#f2e2bb!important;font-family:'Plus Jakarta Sans',Montserrat,sans-serif!important;font-weight:700!important;font-size:15px!important;text-align:center;text-align-last:center;cursor:pointer}
+#kiwify-upsell-eUjZomk select option{background:#2a0911;color:#f2e2bb}
+/* ordem no topo: botão, preço, parcelas, frase do 1 clique, quadro, recusar */
+#slotTopo #kiwify-upsell-trigger-eUjZomk{order:1}
+#slotTopo .up-valor{order:2;margin:6px 0 0!important}
+#slotTopo #kiwify-upsell-eUjZomk > :not(button):not([id^="kiwify-upsell-cancel"]){order:3}
+#slotTopo .up-pay{order:4;margin:0!important}
+#slotTopo .up-scarce{order:5}
+#slotTopo #kiwify-upsell-cancel-trigger-eUjZomk{order:6;margin-top:6px}
+/* ordem no quadro de valores: parcelas, botão, recusar */
+#slotOferta #kiwify-upsell-eUjZomk > :not(button):not([id^="kiwify-upsell-cancel"]){order:1}
+#slotOferta #kiwify-upsell-trigger-eUjZomk{order:2;width:100%!important}
+#slotOferta #kiwify-upsell-cancel-trigger-eUjZomk{order:3}
+@media (prefers-reduced-motion:reduce){#kiwify-upsell-trigger-eUjZomk,#kiwify-upsell-trigger-eUjZomk::after{animation:none!important}}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&display=swap">
 </head>
@@ -528,19 +532,20 @@ section.story.s2 .pull{color:#7d1631!important;-webkit-text-fill-color:#7d1631!i
 <div class="up-cta" id="aceitar">
 <p class="up-hl">Essa é a sua única oportunidade de garantir nesse preço.</p>
 <p class="up-sub">Quando você fechar esta página, essa oferta deixará de existir.</p>
-<!-- ===== BOTÕES DA KIWIFY (upsell 1 clique) ===== -->
-<div class="up-kiwify" id="kiwifyBotoes">
+<!-- ===== BOTÃO DA KIWIFY (upsell 1 clique) =====
+     A Kiwify só ativa um botão por página. Quando a cliente rola até o quadro de valores,
+     o script lá embaixo muda este mesmo botão (com as parcelas) de lugar, e traz de volta ao subir. -->
+<div class="kw-slot" id="slotTopo">
 <div id="kiwify-upsell-eUjZomk" data-upsell-url="" data-downsell-url="" style="--kiwify-upsell-accept-bg:#F2C511;--kiwify-upsell-accept-color:#000000">
           <button id="kiwify-upsell-trigger-eUjZomk">Quero garantir a oferta única desta página</button>
           <div id="kiwify-upsell-cancel-trigger-eUjZomk">Não, obrigada. Vou abrir mão dessa oferta.</div>
         </div>
-</div>
-<!-- ===== FIM DOS BOTÕES DA KIWIFY ===== -->
 <p class="up-valor"><span class="up-ap">por apenas</span> R$87,90</p>
 <p class="up-pay">🔒 Compra em 1 clique: se você pagou com cartão, não precisa digitar os dados de novo.</p>
 <div class="up-scarce">
 <p><b>Essa condição foi liberada só para quem acabou de garantir o Como Esquecer um Homem em 10 Dias.</b></p>
 <p>Ela existe apenas nesta página. Se você fechar ou sair daqui, ela não aparece de novo.</p>
+</div>
 </div>
 </div>
 <div class="wrap grid herogrid" style="align-items:center;gap:48px">
@@ -550,7 +555,7 @@ section.story.s2 .pull{color:#7d1631!important;-webkit-text-fill-color:#7d1631!i
 <h1 class="h1new"><span class="hl l1">Tenha tesão pela própria vida</span><em><span class="hl">e assuma o mulherão que não aceita menos, nem no dinheiro, nem no amor</span></em></h1>
 <div class="logo-rule"><span>✦</span></div>
 <p class="sub subhead"><b>Chega de migalhas!</b> Conheça o desafio de 16 dias com exercícios práticos para ativar a deusa que existe em você e transformar sua <b>energia sexual mais primitiva</b> em combustível para conquistar <b>riqueza, respeito e o valor que você realmente merece.</b></p>
-<a class="btn aceitar" href="#aceitar">Sim! Quero despertar a minha deusa</a>
+
 </div>
 </div>
 </header>
@@ -595,7 +600,7 @@ section.story.s2 .pull{color:#7d1631!important;-webkit-text-fill-color:#7d1631!i
 <p>Vamos dançar, nos expressar, destravar o quadril e dar ao corpo liberdade para sentir. Não para seduzir alguém, mas para despertar a nossa própria potência.</p>
 <p>Em resumo, a energia sexual primitiva é a bateria. O pedestal é a estrutura mental. Quando você junta a bateria certa com a estrutura certa, <strong>você se torna financeiramente imparável e emocionalmente inabalável.</strong></p>
 <p class="pull">A cabeça sonha. O corpo é que materializa.</p>
-<div style="text-align:center"><a class="btn aceitar" href="#aceitar">Sim! Quero despertar a minha deusa</a></div>
+
 </div>
 </section>
 
@@ -618,8 +623,7 @@ section.story.s2 .pull{color:#7d1631!important;-webkit-text-fill-color:#7d1631!i
 <p>Sai sozinha para jantar e curte a própria companhia.</p>
 <p>E quando alguém te oferece migalha… você nem sente vontade de aceitar.</p>
 </div>
-<p class="tpull" style="margin-bottom:30px">Sabe aquela mulher que você olha e pensa “eu queria ser assim”?<br>Ela não nasceu pronta. Ela se despertou.</p>
-<a class="btn aceitar" href="#aceitar">Sim! Quero despertar a minha deusa</a>
+
 </div>
 </section>
 
@@ -732,8 +736,8 @@ Seu navegador não consegue reproduzir este vídeo.
 <div class="por">Por apenas</div>
 <div class="v">R$87,90</div>
 <div class="ou">só nesta página</div>
-<a class="btn aceitar" href="#aceitar" id="buy">Sim! Quero despertar a minha deusa por R$87,90</a>
-<p class="pay" style="font-size:13px;margin:18px 0 0">🔒 Compra em 1 clique, no mesmo cartão da sua compra</p>
+<div class="kw-oferta kw-slot" id="slotOferta"></div>
+<p class="pay" style="font-size:13px;margin:14px 0 0">🔒 Compra em 1 clique: se você pagou com cartão, não precisa digitar os dados de novo.</p>
 <div class="limit">Oferta única: ao sair desta página, ela não volta</div>
 </div>
 </div>
@@ -773,7 +777,7 @@ Seu navegador não consegue reproduzir este vídeo.
 <p>Você pode continuar sonhando com a vida que quer… ou começar a acordar o corpo que vai te levar até ela.</p>
 <p>O seu brilho não foi embora. Ele tá esperando você sentar no seu trono.</p>
 <p><strong>Bora destravar, gata? 🔥</strong></p>
-<a class="btn aceitar" href="#aceitar" id="buyFinal">Sim! Quero despertar a minha deusa e sentar no meu trono</a>
+
 </div>
 </div>
 </section>
@@ -873,19 +877,22 @@ var CHECKOUT='';
   if(p1&&p1.then){ p1.then(function(){ if(!v.muted){comSom=true; v.controls=true;} }).catch(mudo); } else { mudo(); }
 })();
 </script>
+
+<script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
 <script>
-/* Todos os botões "aceitar" da página acionam o botão oficial da Kiwify (upsell de 1 clique) */
+/* A Kiwify só ativa UM botão por página. Este script leva o botão (com as parcelas)
+   para o quadro de valores quando a cliente chega lá, e traz de volta ao topo quando ela sobe. */
 (function(){
-  function kiwifyBtn(){ return document.querySelector('[id^="kiwify-upsell-trigger"]'); }
-  var ex=document.getElementById('upBtnExemplo'), no=document.getElementById('upNaoExemplo');
-  if(kiwifyBtn()){ if(ex)ex.remove(); if(no)no.remove(); }
-  document.querySelectorAll('a.aceitar').forEach(function(a){
-    a.addEventListener('click',function(e){
-      var k=kiwifyBtn();
-      if(k){ e.preventDefault(); k.click(); }
-    });
-  });
+  var w=document.getElementById('kiwify-upsell-eUjZomk'),
+      topo=document.getElementById('slotTopo'), oferta=document.getElementById('slotOferta');
+  if(!w||!topo||!oferta||!('IntersectionObserver' in window))return;
+  function mover(destino){
+    if(w.parentNode===destino)return;
+    var origem=w.parentNode; origem.style.minHeight=origem.offsetHeight+'px';
+    destino.appendChild(w); destino.style.minHeight='';
+  }
+  new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) mover(e.target); }); },{threshold:0.15}).observe(oferta);
+  new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) mover(e.target); }); },{threshold:0.05}).observe(topo);
 })();
 </script>
-<script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
 </body></html>
