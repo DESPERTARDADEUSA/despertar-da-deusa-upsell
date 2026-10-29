@@ -479,6 +479,25 @@ section.story.s2 .pull{color:#7d1631!important;-webkit-text-fill-color:#7d1631!i
 @media (prefers-reduced-motion:reduce){.hero .up-btn,.hero .up-btn::after{animation:none!important}}
 .hero .up-ap{font-size:.42em;font-weight:600;color:#fff;letter-spacing:.02em;vertical-align:middle;margin-right:4px}
 .hero .up-valor+.up-pay{margin:2px 0 18px}
+
+/* === botões oficiais da Kiwify === */
+.hero .up-cta{display:flex!important;flex-direction:column;align-items:center}
+.hero .up-kiwify,.hero #kiwify-upsell-eUjZomk{display:contents!important}
+.hero .up-hl{order:1}.hero .up-sub{order:2}
+.hero #kiwify-upsell-trigger-eUjZomk{order:3}
+.hero .up-valor{order:4}.hero .up-pay{order:5}.hero .up-scarce{order:6}
+.hero #kiwify-upsell-cancel-trigger-eUjZomk{order:7}
+.hero #kiwify-upsell-trigger-eUjZomk{display:block!important;width:92%!important;max-width:520px;margin:0 auto!important;padding:20px 18px!important;font-size:clamp(15px,4.2vw,19px)!important;line-height:1.35!important;text-transform:uppercase;cursor:pointer;
+ position:relative;overflow:hidden;isolation:isolate;border-radius:999px!important;border:1px solid #f1dfb3!important;
+ background:linear-gradient(180deg,#f2e2bb 0%,#dcbd7f 38%,#c49a52 72%,#a77d3c 100%)!important;color:#3b0a14!important;
+ font-family:'Plus Jakarta Sans',Montserrat,sans-serif!important;font-weight:800!important;letter-spacing:.06em!important;text-shadow:0 1px 0 rgba(255,245,220,.55);
+ animation:upbreath 2.6s ease-in-out infinite!important}
+.hero #kiwify-upsell-trigger-eUjZomk::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-40%;width:28%;z-index:-1;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,252,240,.75) 50%,rgba(255,255,255,0) 100%);transform:skewX(-20deg);animation:upshine 2.6s ease-in-out infinite}
+.hero #kiwify-upsell-trigger-eUjZomk:hover{transform:translateY(-2px)}
+.hero #kiwify-upsell-trigger-eUjZomk:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hero #kiwify-upsell-cancel-trigger-eUjZomk{margin:18px 0 0;color:#cdb8b0!important;background:none!important;border:0!important;font-family:'Plus Jakarta Sans',Montserrat,sans-serif;font-size:13px!important;font-weight:500;text-decoration:underline;opacity:.85;cursor:pointer;padding:6px}
+.hero .up-valor{margin-top:16px!important}
+@media (prefers-reduced-motion:reduce){.hero #kiwify-upsell-trigger-eUjZomk,.hero #kiwify-upsell-trigger-eUjZomk::after{animation:none!important}}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&display=swap">
 </head>
@@ -497,11 +516,12 @@ section.story.s2 .pull{color:#7d1631!important;-webkit-text-fill-color:#7d1631!i
 <div class="up-cta" id="aceitar">
 <p class="up-hl">Essa é a sua única oportunidade de garantir nesse preço.</p>
 <p class="up-sub">Quando você fechar esta página, essa oferta deixará de existir.</p>
-<!-- ===== BOTÕES DA KIWIFY =====
-     Cole aqui dentro o código HTML que a Kiwify gera no "gerador de upsell".
-     Enquanto o código não for colado, aparece o botão de exemplo abaixo. -->
+<!-- ===== BOTÕES DA KIWIFY (upsell 1 clique) ===== -->
 <div class="up-kiwify" id="kiwifyBotoes">
-<a class="btn up-btn" href="#aceitar" id="upBtnExemplo">Quero garantir a oferta única desta página</a>
+<div id="kiwify-upsell-eUjZomk" data-upsell-url="" data-downsell-url="" style="--kiwify-upsell-accept-bg:#F2C511;--kiwify-upsell-accept-color:#000000">
+          <button id="kiwify-upsell-trigger-eUjZomk">Quero garantir a oferta única desta página</button>
+          <div id="kiwify-upsell-cancel-trigger-eUjZomk">Não, obrigada. Vou abrir mão dessa oferta.</div>
+        </div>
 </div>
 <!-- ===== FIM DOS BOTÕES DA KIWIFY ===== -->
 <p class="up-valor"><span class="up-ap">por apenas</span> R$87,90</p>
@@ -510,7 +530,6 @@ section.story.s2 .pull{color:#7d1631!important;-webkit-text-fill-color:#7d1631!i
 <p><b>Essa condição foi liberada só para quem acabou de garantir o Como Esquecer um Homem em 10 Dias.</b></p>
 <p>Ela existe apenas nesta página. Se você fechar ou sair daqui, ela não aparece de novo.</p>
 </div>
-<p class="up-nowrap"><a class="up-no" href="#" id="upNaoExemplo">Não, obrigada. Vou abrir mão dessa oferta.</a></p>
 </div>
 <div class="wrap grid herogrid" style="align-items:center;gap:48px">
 <div>
@@ -856,4 +875,5 @@ var CHECKOUT='';
   });
 })();
 </script>
+<script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
 </body></html>
