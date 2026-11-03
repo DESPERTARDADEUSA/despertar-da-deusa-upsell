@@ -517,6 +517,22 @@ section.story.s2 .pull{color:#7d1631!important;-webkit-text-fill-color:#7d1631!i
 .hero .up-ap s{opacity:.8;text-decoration-thickness:2px}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&display=swap">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1931307808250383');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1931307808250383&ev=PageView&noscript=1"/></noscript>
+<!-- Fim do Meta Pixel -->
 </head>
 <body>
 
@@ -894,6 +910,20 @@ var CHECKOUT='';
   }
   new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) mover(e.target); }); },{threshold:0.15}).observe(oferta);
   new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) mover(e.target); }); },{threshold:0.05}).observe(topo);
+})();
+</script>
+<script>
+/* Meta Pixel: conteúdo visto + clique no botão do upsell (1 clique Kiwify) */
+(function(){
+  if(!window.fbq)return;
+  fbq('track','ViewContent',{content_name:'Despertar da Deusa - Upsell',value:97,currency:'BRL'});
+  var enviado=false;
+  document.addEventListener('click',function(e){
+    var el=e.target.closest&&e.target.closest('button, a, [role="button"]');
+    if(!el||enviado)return;
+    var ehKiwify=(el.id&&el.id.indexOf('kiwify-upsell-trigger')===0)||(el.closest('#kiwify-upsell-eUjZomk')&&!/cancel/.test(el.id||'')&&/garantir/i.test(el.textContent||''));
+    if(ehKiwify){ enviado=true; fbq('track','InitiateCheckout',{content_name:'Despertar da Deusa - Upsell',value:97,currency:'BRL'}); }
+  },true);
 })();
 </script>
 </body></html>
